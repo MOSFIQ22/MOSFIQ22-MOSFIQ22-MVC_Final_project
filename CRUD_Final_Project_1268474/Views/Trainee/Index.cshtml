@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CRUD_Final_Project_1268474.Models.Trainne>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <h3 class="rounded d-flex justify-content-center bg-info text-light"> Add Trainees</h3>
+        <div class="d-flex justify-content-end mb-1">
+            @Html.ActionLink("Add New", "Create", "Trainee", new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-light text-bg-light text-success">
+                <tr>
+                    <th></th>
+                    <th>@Html.DisplayNameFor(x => x.TrainneName)</th>
+                    <th>@Html.DisplayNameFor(x => x.Course.BatchName)</th>
+                    <th>@Html.DisplayNameFor(x => x.TraineeAddress)</th>
+                    <th>@Html.DisplayNameFor(x => x.BirthDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.Email)</th>
+                    <th>@Html.DisplayNameFor(x => x.IsRunning)</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td><img src="~/Uploads/@b.Picture" class="rounded-circle" style="width:40px" /></td>
+                        <th>@Html.DisplayFor(x => b.TrainneName)</th>
+                        <th>@Html.DisplayFor(x => b.Course.BatchName)</th>
+                        <th>@Html.DisplayFor(x => b.TraineeAddress)</th>
+                        <th>@Html.DisplayFor(x => b.BirthDate)</th>
+                        <th>@Html.DisplayFor(x => b.Email)</th>
+                        <th>@Html.DisplayFor(x => b.IsRunning)</th>
+
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Trainee", new { id = b.TrainneID }, new { @class = "btn btn-secondary btn-sm" })
+                            <a href="@Url.Action("Delete", "Trainee", new {id=b.TrainneID})" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

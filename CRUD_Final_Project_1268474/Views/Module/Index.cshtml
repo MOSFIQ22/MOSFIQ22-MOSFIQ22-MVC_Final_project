@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CRUD_Final_Project_1268474.Models.Module>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="rounded d-flex justify-content-center bg-info text-light">Modules</h3>
+        <div class="d-flex justify-content-end mb-1">
+            @Html.ActionLink("Add New", "Create", "Module", new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-light text-bg-light text-success">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.ModuleName)</th>
+                    <th>@Html.DisplayNameFor(x => x.ModuleDesc)</th>
+                    <th>@Html.DisplayNameFor(x => x.ModuleNumber)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => c.ModuleName)</td>
+                        <td>@Html.DisplayFor(x => c.ModuleDesc)</td>
+                        <td>@Html.DisplayFor(x => c.ModuleNumber)</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Module", new { id = c.ModuleID }, new { @class = "btn btn-secondary btn-sm" })
+                            <a href="@Url.Action("Delete", "Module", new {id=c.ModuleID})" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

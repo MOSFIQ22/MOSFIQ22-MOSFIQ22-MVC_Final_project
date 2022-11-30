@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CRUD_Final_Project_1268474.Models.Exam>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="rounded d-flex justify-content-center bg-info text-light">Exam</h3>
+        <div class="d-flex justify-content-end mb-1">
+            @Html.ActionLink("Add New", "Create", "Exam", new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-light text-bg-light text-success">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.ExamName)</th>
+                    <th>@Html.DisplayNameFor(x => x.ExamFee)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(x => c.ExamName)</td>
+                    <td>@Html.DisplayFor(x => c.ExamFee)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Exam", new { id = c.ExamID }, new { @class = "btn btn-secondary btn-sm" })
+                        <a href="@Url.Action("Delete", "Exam", new {id=c.ExamID})" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

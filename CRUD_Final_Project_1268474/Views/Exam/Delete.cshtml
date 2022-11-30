@@ -1,0 +1,39 @@
+﻿@model CRUD_Final_Project_1268474.Models.Exam
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3>Confirm Delete</h3>
+    </div>
+
+    <div class="form-group row mb-1">
+        @Html.LabelFor(x => x.ExamName, new { @class = "col-form-label col-form-label-sm col-2" })
+        <div class="col-4">
+            @Html.DisplayFor(x => x.ExamName)
+        </div>
+    </div>
+    <div class="form-group row mb-1">
+        @Html.LabelFor(x => x.ExamFee, new { @class = "col-form-label col-form-label-sm col-2" })
+        <div class="col-4">
+            @Html.DisplayFor(x => x.ExamFee)
+        </div>
+    </div>
+    <div class="form-group row mb-1">
+
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(x => x.ExamID)
+            <div class="col-4 offset-2">
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            </div>
+        }
+    </div>
+    <div class="col-12">
+
+        @Html.ActionLink("Back to list", "Index")
+    </div>
+</div>
+
+

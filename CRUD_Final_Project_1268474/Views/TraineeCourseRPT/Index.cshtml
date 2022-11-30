@@ -1,0 +1,72 @@
+﻿@*@model IEnumerable<CRUD_Final_Project_1268474.Models.Course>*@
+@{
+    ViewBag.Title = "Index";
+}
+@*<div class="row">
+    <div class="col-12">
+        <h3 class="rounded d-flex justify-content-center bg-info text-light">Course+Module</h3>
+        <div class="d-flex justify-content-end mb-1">
+            @Html.ActionLink("Add New", "Create", new { }, new { @class = "btn btn-primary btn-sm" })
+        </div>
+        <h4>Course</h4>
+        <table class="table table-bordered table-striped">
+            <thead class="bg-light text-bg-light text-success">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.BatchName)</th>
+                    <th>@Html.DisplayNameFor(x => x.CourseName)</th>
+                    <th>@Html.DisplayNameFor(x => x.CourseDesc)</th>
+                    <th>@Html.DisplayNameFor(x => x.CourseCost)</th>
+                    <th>@Html.DisplayNameFor(x => x.CourseDuration)</th>
+                    <th>@Html.DisplayNameFor(x => x.StartDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.EndDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.Available)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => b.BatchName)</td>
+                        <td>@Html.DisplayFor(x => b.CourseName)</td>
+                        <td>@Html.DisplayFor(x => b.CourseDesc)</td>
+                        <td>@Html.DisplayFor(x => b.CourseCost)</td>
+                        <td>@Html.DisplayFor(x => b.CourseDuration)</td>
+                        <th>@Html.DisplayFor(x => b.StartDate)</th>
+                        <th>@Html.DisplayFor(x => b.EndDate)</th>
+                        <th>@Html.DisplayFor(x => b.Available)</th>
+
+                    </tr>
+                    <tr>
+                        <td class="border-end-0">&nbsp;</td>
+                        <td colspan="7" class="border-start-0">
+                            <h4>Module</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>TrainneName</th>
+                                        <th>TraineeAddress</th>
+                                        <th>BirthDate</th>
+                                    </tr>
+
+                                </thead>
+                                @foreach (var y in b.Trainnes)
+                                {
+                                    <tr>
+                                        <td>@y.TrainneName</td>
+                                        <td>@y.TraineeAddress.</td>
+                                        <td>@y.BirthDate.</td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="~/Reports/index.cshtml">View Report</a>
+    </div>
+</div>*@
+
+
+
